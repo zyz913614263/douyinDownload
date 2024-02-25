@@ -54,14 +54,7 @@
 ### 安装依赖
 
 windows用户下载 Release文件夹 中的 [DouYinCommand.exe]文件运行
-windows用户本地有`python3.9`环境, 也可按照linux与mac用户的方式运行
 
-linux与mac用户下载本项目, 在本地`python3.9`环境中运行, 首先需要安装依赖, 安装命令
-
-```
-cd /path/to/douyin-downloader
-python -m pip install -r requirements.txt
-```
 
 ### 配置文件方式
 

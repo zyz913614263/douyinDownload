@@ -82,9 +82,7 @@ python -m pip install -r requirements.txt
 
 ```
 windows用户:
-.\DouYinCommand.exe -h
-linux与mac用户:
-python DouYinCommand.py -h
+.\DouYinCommand.exe -l https://www.douyin.com/video/7328255254204550451
 ```
 
 - 参数介绍

@@ -1,0 +1,113 @@
+#######################################
+# 说明:
+# 1. 井号(#)为注释
+# 2. 缩进严格对齐，使用空格缩进, 注意有些冒号后面有一个空格, 有些没有空格
+# 3. 请使用英文字符
+# 4. 更多yaml语法请上网查看
+#######################################
+
+
+# 作品(视频或图集)、直播、合集、音乐集合、个人主页的分享链接或者电脑浏览器网址
+# (删除文案, 保证只有URL, https://v.douyin.com/kcvMpuN/ 或者 https://www.douyin.com/开头的)
+# 可以设置多个链接, 确保至少一个链接
+# 必选
+link:
+  -  https://www.douyin.com/video/6915675899241450760
+
+
+# 下载保存位置, 默认当前文件位置
+# 必选
+path: ./Downloaded/
+
+# 是否下载视频中的音乐(True/False), 默认为True
+# 可选
+music: True
+
+# 是否下载视频的封面(True/False), 默认为True, 当下载视频时有效
+# 可选
+cover: True
+
+# 是否下载作者的头像(True/False), 默认为True
+# 可选
+avatar: True
+
+# 是否保存获取到的数据(True/False), 默认为True
+# 可选
+json: True
+
+folderstyle: True # True -> 每个视频是一个单独的文件夹; False -> 所有视频共用一个文件夹
+# True
+# user_xxx_xxx
+#   - like/post/mix
+#       - 2022-11-28 13.09.56_xxx
+#         - 2022-11-28 13.09.56_xxx.mp4
+#       - 2022-11-29 12.09.56_xxx
+#         - 2022-11-29 12.09.56_xxx.mp4
+
+# False
+# user_xxx_xxx
+#   - like/post/mix
+#       - 2022-11-28 13.09.56_xxx.mp4
+#       - 2022-11-29 12.09.56_xxx.mp4
+
+# link是个人主页时, 设置下载发布的作品(post)或喜欢的作品(like)或者用户所有合集(mix), 默认为post, 可以设置多种模式
+# 可选
+mode:
+  - post
+  - like
+  - mix
+
+# 下载作品个数设置
+# 可选
+number:
+  post: 0     # 主页下作品下载个数设置, 默认为0 全部下载
+  like: 5     # 主页下喜欢下载个数设置, 默认为0 全部下载
+  allmix: 1   # 主页下合集下载个数设置, 默认为0 全部下载
+  mix: 5      # 单个合集下作品下载个数设置, 默认为0 全部下载
+  music: 5    # 音乐(原声)下作品下载个数设置, 默认为0 全部下载
+
+database: True # 如果不使用数据库, 增量更新将不可用
+
+
+
+# 增量下载, 下载作品范围: 抖音最新作品到本地的最新作品之间的作品, 如果本地没有该链接的任何视频则全部下载
+# 可配合 number 选项一起使用
+# 情况1: number(假如设置5) 和 increase(假如抖音博主更新了3条作品,本地并未下载) 则会获取5条数据并下载
+# 情况2: number(假如设置5) 和 increase(假如抖音博主更新了6条作品,本地并未下载) 则会获取6条数据并下载
+# 情况3: number(假如设置5) 和 increase(假如本地并未下载该博主视频) 则会获取所有的视频
+# 情况4: 当获取主页所有mix时(mode是mix模式)比较特殊, number(allmix) 控制下载多少个合集, increase(allmix) 对每个合集进行增量更新
+# 可选
+increase:
+  post: False     # 是否开启主页作品增量下载(True/False), 默认为False
+  like: False     # 是否开启主页喜欢增量下载(True/False), 默认为False
+  allmix: False   # 是否开启主页合集增量下载(True/False), 默认为False
+  mix: False      # 是否开启单个合集下作品增量下载(True/False), 默认为False
+  music: False    # 是否开启音乐(原声)下作品增量下载(True/False), 默认为False
+
+# 设置线程数, 默认5个线程
+# 可选
+thread: 5
+
+# cookie 请登录网页抖音后F12查看
+# cookies 和 cookie 二选一, 要使用这种形式, 请注释下面的cookie
+# 目前只需要msToken、ttwid、odin_tt、passport_csrf_token、sid_guard
+# 可以动态添加, 程序会根据填的键查找，并没有写死, 如果抖音需要更多的cookie自己加上就行了
+cookies:
+  # msToken: xxx
+  # ttwid: xxx
+  # odin_tt: xxx
+  # passport_csrf_token: xxx
+  # sid_guard: xxx
+  msToken: V2Z81awjFqi9-xY2nF9Nzt5pAx8cIJ_NyEgaASXpiLTQp3RoNL9aNajtz3TR9PGGYr5HIfDn7xN6xcIG3ry0qL6Dz4OoOJXLOapbPwo6g_6_wayun026cgrnsNyh_lY=
+  ttwid: 1%7CuvVSCs3TrpXCLYPdGOm9kOZi2KfPl3aQMokwAT4p2gw%7C1668686667%7C407e79f41c1d3c7beda53f6535064dc5a07eee68d9a372c4ab360f4bfa0b838b
+  odin_tt: 6f8f0b66fda782f9950e77dbf9aef97aaba0ae6f8b569a9b015a97c16630db81138ce3cc0d9e9a751b76c4a841241ae6
+  passport_csrf_token: 99d9b8c4945dac0fd2998b5b56de6929
+  sid_guard: 66d7a2432d3b509a108656d2dc4a4ed5%7C1685000706%7C5183999%7CMon%2C+24-Jul-2023+07%3A45%3A05+GMT
+
+# cookie 请登录网页抖音后F12查看
+# cookies 和 cookie 二选一, 要使用这种形式, 请注释上面的cookies及包含的所有键值对
+# 设置了这个后上面的cookies选项自动失效, 这个优先级更高
+# 格式: "name1=value1; name2=value2;" 注意要加冒号
+# 冒号中的内容包括不限于以下键值对, 如果抖音需要更多的cookie自己加上就行了
+#cookie: "msToken=xxx; ttwid=xxx; odin_tt=xxx; passport_csrf_token=xxx; sid_guard=xxx;"
+

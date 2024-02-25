@@ -25,9 +25,7 @@
 
 # 使用截图
 
-![DouYinCommand1](img/DouYinCommand1.jpg)
-![DouYinCommand2](img/DouYinCommand2.jpg)
-![DouYinCommandl ive](img/DouYinCommandlive.jpg)
+![DouYinCommand1](img/DouYinCommand1.png)
 ![DouYinCommand download](img/DouYinCommanddownload.jpg)
 ![DouYinCommand download detail](img/DouYinCommanddownloaddetail.jpg)
 

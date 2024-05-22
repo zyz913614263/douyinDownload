@@ -83,4 +83,4 @@ windows用户:
 --link LINK, -l LINK             作品(视频或图集)、直播、合集、音乐集合、个人主页的分享链接或者电脑浏览器网址, 可以设置多个链接
                                  (删除文案, 保证只有URL, https://v.douyin.com/kcvMpuN/ 或者 https://www.douyin.com/开头的)
 ```
-
+参考：https://github.com/jiji262/douyin-downloader
